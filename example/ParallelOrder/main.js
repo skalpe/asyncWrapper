@@ -1,32 +1,30 @@
 import {async} from 'async';
 
 async(function* (){
-  console.log('Async order.');
+  console.info('Parallel order.');
 
-  var aPromiseResult, bPromiseResult, cPromiseResult;
+  var aPromise, bPromise, cPromise, results;
 
-    aPromiseResult = yield new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('aPromise resolved');
-      }, 1000);
-    });
+  aPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('aPromise resolved');
+    }, 1000);
+  });
+  bPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('bPromise resolved');
+    }, 2000);
+  });
+  cPromise = new Promise(function(resolve, reject){
+    setTimeout(function(){
+      resolve('cPromise resolved');
+    }, 3000);
+  });
 
-    console.log(aPromiseResult);
+  results = yield Promise.all([aPromise, bPromise, cPromise]);
 
-    bPromiseResult = yield new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('bPromise resolved');
-      }, 2000);
-    });
+  console.log(results);
 
-    console.log(bPromiseResult);
-
-    cPromiseResult = yield new Promise(function(resolve, reject){
-      setTimeout(function(){
-        resolve('cPromise resolved');
-      }, 3000);
-    });
-
-    console.log(cPromiseResult);
+  console.info('Finished');
 
 });

@@ -1,6 +1,5 @@
 function async(gen){
-  var generator = gen(),
-    noArgsCall = function(){};
+  var generator = gen();
 
   next(generator.next());
 
