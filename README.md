@@ -2,7 +2,7 @@
 Basic implementation of async wrapper for control flow. Based on generators and promises.Angular DI uses for experiments.
 ### Installation
 ```bash
-# Clone this repo (or your fork).
+# Clone this repo
 git clone https://github.com/skalpe/asyncWrapper.git
 
 # Install all the the dev dependencies, such as Karma, Gulp, etc.
