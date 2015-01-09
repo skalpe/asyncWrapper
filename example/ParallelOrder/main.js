@@ -5,17 +5,17 @@ async(function* (){
 
   var aPromise, bPromise, cPromise, results;
 
-  aPromise = new Promise((resolve, reject) => {
+  aPromise = new Promise((resolve) => {
     setTimeout(() => {
       resolve('aPromise resolved');
     }, 1000);
   });
-  bPromise = new Promise((resolve, reject) => {
+  bPromise = new Promise((resolve) => {
     setTimeout(() => {
       resolve('bPromise resolved');
     }, 2000);
   });
-  cPromise = new Promise(function(resolve, reject){
+  cPromise = new Promise(function(resolve){
     setTimeout(function(){
       resolve('cPromise resolved');
     }, 3000);
