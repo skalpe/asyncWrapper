@@ -1,7 +1,7 @@
 import {async} from 'async';
 
 async(function* (){
-  console.info('Parallel order.');
+  console.info('Parallel order. ');
 
   var aPromise, bPromise, cPromise, results;
 
