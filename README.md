@@ -1,5 +1,5 @@
 # asyncWrapper
-Basic implementation of async wrapper for control flow. Based on generators and promises.Angular DI is useed for experiments.
+Basic implementation of async wrapper for control flow. Based on generators and promises.Angular DI is used for experiments.
 ### Installation
 ```bash
 # Clone this repo
